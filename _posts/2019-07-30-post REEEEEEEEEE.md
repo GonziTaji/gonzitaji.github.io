@@ -74,6 +74,16 @@ a {
 
     * Gastar puntos de subida de nivel.
 
+```javascript
+/* GET home page. */
+function mifuncionXd() {
+  const miValor = obtenerValor(8);
+  const resultado = procesar(miValor);
+
+  return { valor: miValor, resultado: resultado }
+}
+```
+
 * Confirmar eliminación de una notificación
 
     * IDEA: agregar botón actualizar para la hoja de personajes, así puede abrir más de una sin problemas, y cuando éste haga un cambio, manualmente actualiza las otras.
@@ -88,7 +98,7 @@ a {
 router.get('/', async (req, res, next) => {
     const mdContentPath = path.join(mdContentDirPath, 'home.md');
     const mdContent = fs.readFileSync(mdContentPath).toString();
-
+    // COMENTARIO MUY LARGOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
     res.render('index', { 
         title: 'Home',
         mdContent: md.render(mdContent)

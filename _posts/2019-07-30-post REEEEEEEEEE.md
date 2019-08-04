@@ -13,6 +13,20 @@ Para enviar un objeto generado se debe hacer click en él para que aparezca la l
 
 Para ejecutar las aplicaciones, se debe descomprimir el archivo Electron.rar, abrir la carpeta de cada aplicación y abrir el archivo electron.exe. El nombre e ícono son provisorios, y serán cambiados en el futuro.
 
+### qwe
+
+ectron.exe. El nombre e ícono son provisorios, y serán cambiados en ectron.exe. El nombre e ícono son provisorios, y serán cambiados en 
+
+#### 231231
+
+ectron.exe. El nombre e ícono son provisorios, y serán cambiados en 
+
+##### dfbdfbdfb
+
+iar más de una vez, pero al ser enviados pierden color como recordatorio visual
+
+Para ejecutar las aplicaciones, se debe descomprimir el archivo Ele
+
 ![ee](images/opm2.PNG)
   
 0|1|2|3

@@ -13,11 +13,15 @@ $darkGray: #333;
 $gray: #666;
 $lightGray: #eee;
 $white: #fff;
+$dimWhite: #f0f0f0;
 
 // Font stacks
 $helvetica: Helvetica, Arial, sans-serif;
 $helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $georgia: Georgia, serif;
+
+$fontSize: 19px;
+
 
 // Mobile breakpoints
 @mixin mobile {

@@ -35,8 +35,26 @@
       </div>
     </div>
 
-    <div id="main" role="main" class="container">
-      {{ content }}
+    <div id="main" role="main">
+      <div id="side-menu">
+        <h3>Mis publicaciones</h3>
+
+        <ul class="posts-list">
+          {% for post in site.posts %}
+          <li>
+            <a href="{{ site.baseurl }}{{ post.url }}">
+              <small>{{ post.date | date:"%d/%m/%y" }} - </small>
+              <span>{{ post.title }}</span>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        
+      </div>
+      
+      <div class="container">
+        {{ content }}
+      </div>
     </div>
 
     <div class="wrapper-footer">

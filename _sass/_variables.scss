@@ -20,11 +20,18 @@ $helvetica: Helvetica, Arial, sans-serif;
 $helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $georgia: Georgia, serif;
 
-$fontSize: 17px;
+$fontSize: 16px;
 
 // Mobile breakpoints
 @mixin mobile {
   @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+// Small brakpoint para cambiar layout (esconde menu)
+@mixin small {
+  @media screen and (max-width: 800px) {
     @content;
   }
 }

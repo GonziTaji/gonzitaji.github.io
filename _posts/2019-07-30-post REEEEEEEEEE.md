@@ -2,6 +2,7 @@
 layout: post
 title:  "post REEEEEEEEEE"
 date:   2019-07-30 21:51:30 -0400
+categories: jekyll update
 ---
 # Instalación e instrucciones de uso:
 

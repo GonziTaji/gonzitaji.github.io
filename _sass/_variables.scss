@@ -13,7 +13,7 @@ $darkGray: #333;
 $gray: #666;
 $lightGray: #999;
 $white: #fff;
-$dimWhite: #f0f0f0;
+$dimWhite: #f6f6f6;
 
 // Font stacks
 $helvetica: Helvetica, Arial, sans-serif;
@@ -25,6 +25,13 @@ $fontSize: 17px;
 // Mobile breakpoints
 @mixin mobile {
   @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+// Small brakpoint para cambiar layout (esconde menu)
+@mixin small {
+  @media screen and (max-width: 800px) {
     @content;
   }
 }

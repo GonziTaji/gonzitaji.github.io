@@ -5,18 +5,3 @@ layout: default
 <h1>Hola!</h1>
 <!-- TODO: Incluir contenido desde un archivo markdown? -->
 <p>EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE ofjorigr</p>
-
-
-<ul class="posts-list">
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        <p>
-          <small>{{ post.date | date:"%d/%m/%Y" }}</small>
-          -
-          <span>{{ post.title }}</span>
-        </p>
-      </a>
-  </li>
-  {% endfor %}
-</ul>

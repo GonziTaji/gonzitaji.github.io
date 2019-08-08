@@ -13,21 +13,21 @@
 /* BASE RULES */
 /**************/
 
-html {
-  font-size: $fontSize;
-  @include mobile { font-size: 14px; }
-}
+html { font-size: $fontSize }
 
 body {
 	background: $dimWhite;
   font: 1rem $helvetica;
   color: $darkGray;
+
+  @include small { font-size: 0.8rem }
 }
 
 .container {
   margin: 0 auto;
   padding: 0 10px;
   max-width: 800px;
+  word-wrap: break-word;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -130,18 +130,6 @@ img {
   background: $lightGray;
 }
 
-// Nicolas Gallagher's micro clearfix hack
-// http://nicolasgallagher.com/micro-clearfix-hack/
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
-}
-
 /*********************/
 /* LAYOUT / SECTIONS */
 /*********************/
@@ -153,77 +141,41 @@ img {
 .wrapper-masthead {
   margin-bottom: 50px;
   border-bottom: 1px black solid;
-  background: rgb(100, 98, 98);
-  color: black;
+  background-color: rgb(87,180,175);
+  position: sticky;
+  top: 0; // necesario para `position: sticky`
+
+  @include mobile {
+    position: initial;
+  }
 }
 
 .masthead {
-  padding: 20px 0;
-
-  @include mobile {
-    text-align: center;
-  }
+  display: flex;
+  justify-content: space-between;
 }
 
-.site-avatar {
-  float: left;
-  width: 70px;
-  height: 70px;
-  margin-right: 15px;
-
-  @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
-
-  img {
-    border-radius: 5px;
-  }
-}
-
-.site-info {
-  float: left;
-
-  @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
-}
+.site-info { flex-wrap: nowrap }
 
 .site-name {
+  // display: inline-block;
+  flex-wrap: nowrap;
   margin: 0;
   color: $white;
-  cursor: pointer;
-  font-family: $helveticaNeue;
-  font-weight: 300;
-  font-size: 28px;
+  font-weight: normal;
   letter-spacing: 1px;
 }
 
 .site-description {
-  margin: -5px 0 0 0;
+  display: inline-block;
   color: $dimWhite;
-  font-size: 16px;
-
-  @include mobile {
-    margin: 3px 0;
-  }
 }
 
 nav {
-  float: right;
-  margin-top: 23px; // @TODO: Vertically middle align
+  align-self: center; // vertical align in flexbox
   font-family: $helveticaNeue;
-  font-size: 18px;
 
-  @include mobile {
-    float: none;
-    margin-top: 9px;
-    display: block;
-    font-size: 16px;
-  }
+  @include mobile { display: block }
 
   a {
     margin-left: 20px;
@@ -243,18 +195,38 @@ nav {
 // .main
 //
 
+#main {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: minmax(260px, max-content) minmax(min-content, 800px);
+  grid-gap: 30px;
+
+  @include small {
+    display: block;
+
+    #side-menu { display: none }
+  }
+}
+
 ul.posts-list {
+  border-right: 1px solid $lightGray;
+  padding: 0px;
   list-style-type: none;
   
   li {
-    margin: 30px 0px;
+    line-height: 1.2em;
 
-    a { color: $gray; }
+    a { color: $gray }
     a:hover { 
-      &, small {
-        color: $black;
-        text-decoration-line: underline;
-      }
+      color: $black;
+      text-decoration-line: underline;
+
+      small { color: $gray }
+    }
+
+    &::marker {
+      color: red;
+      margin: 0px 0px 0px 0px;
     }
 
     small {

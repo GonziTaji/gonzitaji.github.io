@@ -178,15 +178,20 @@ nav {
   @include mobile { display: block }
 
   a {
+    height: 40px;
     margin-left: 20px;
     color: $white;
-    text-align: right;
+    // text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
+    display: inline-block;
 
     @include mobile {
       margin: 0 10px;
-      color: $blue;
+    }
+
+    &.active {
+      text-decoration-line: underline;
     }
   }
 }

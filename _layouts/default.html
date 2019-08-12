@@ -28,8 +28,11 @@
           </a>
 
           <nav>
-            <a href="{{ site.baseurl }}/archivo">Archivo</a>
-            <a href="{{ site.baseurl }}/about">Acerca de</a>
+            {% for entrada in site.data.paginas %}
+              <a 
+              class="{% if entrada.url == page.url %}active{% endif %}"
+              href="{{ entrada.url }}">{{ entrada.nombre }}</a>
+            {% endfor %}
           </nav>
         </header>
       </div>

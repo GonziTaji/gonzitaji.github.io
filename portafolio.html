@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{% for project in site.projects %}
+    <div class="project-overview">
+        <h2>{{ project.titulo }}</h2>
+        
+        <h4>{{ project.subtitulo }}</h4>
+        <!-- TODO: estilos de projectos -->
+        <img src="{{ project.thumbnail_url }}">
+
+        Tags:
+        <ul>
+            {% for tag in project.tags %}
+            <li>{{ tag }}</li>
+            {% endfor %}
+        </ul>
+        
+        <a href="{{ project.github }}">code</a>
+
+        {%if project.demo_url %}
+        <a href="{{ project.demo_url }}">demo</a>
+        {% endif %}
+        
+        <p>{{ project.resumen | markdownify }}</p>
+    </div>
+{% endfor %}

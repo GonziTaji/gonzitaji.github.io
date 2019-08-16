@@ -16,25 +16,22 @@
 
   <body>
     <div class="wrapper-masthead">
-      <!-- <div class="container"> -->
-        <header class="masthead">
+      <header class="masthead">
+        <a class="site-info" href="{{ site.baseurl }}/">
+          <h1 class="site-name">
+            {{ site.name }}
+          </h1> 
+          <span class="site-description">{{ site.description }}</span>
+        </a>
 
-          <a class="site-info" href="{{ site.baseurl }}/">
-            <h1 class="site-name">
-              {{ site.name }}
-            </h1> 
-            <span class="site-description">{{ site.description }}</span>
-          </a>
-
-          <nav>
-            {% for entrada in site.data.paginas %}
-              <a 
-              class="{% if entrada.url == page.url %}active{% endif %}"
-              href="{{ entrada.url }}">{{ entrada.nombre }}</a>
-            {% endfor %}
-          </nav>
-        </header>
-      <!-- </div> -->
+        <nav>
+          {% for entrada in site.data.paginas %}
+            <a 
+            class="{% if entrada.url == page.url %}active{% endif %}"
+            href="{{ entrada.url }}">{{ entrada.nombre }}</a>
+          {% endfor %}
+        </nav>
+      </header>
     </div>
 
     <div id="main" role="main">
@@ -52,6 +49,10 @@
           {% endfor %}
         </ul>
         
+        {% if site.posts.size == 0 %}
+          <span>Sin publicaciones, aún.</span>
+        {% endif %}
+
       </div>
       
       <div class="container">
@@ -69,4 +70,22 @@
 
     {% include analytics.html %}
   </body>
+
+  <script>
+    setMainMinHeight();
+    window.onresize = setMainMinHeight;
+
+    function setMainMinHeight() {
+      // alturas necesarias
+      b = document.body.offsetHeight;
+      f = document.querySelector('.wrapper-footer').offsetHeight;
+      h = document.querySelector('.wrapper-masthead').offsetHeight;
+
+      // wrappers de header y footer aplican 50 de margen cada uno
+      margin = 100;
+
+      document.querySelector('#main').style.minHeight = `${b - f - h - 100}px`
+    }
+  </script>
+
 </html>

@@ -1,15 +1,15 @@
 ---
 layout: page
-title: About
+title: Sobre mi
 permalink: /about/
 ---
 
-Some information about you!
+Mi nombre es Gonzalo Tajmuch y me dedico actualmente al desarrollo de software.
 
-### More Information
+Pretendo que la construcción de este blog/portafolio permita ampliar mis conocimientos, además de poder utilizarlo para escribir sobre ideas, projectos o cualquier cosa que encuentre interesante respecto al rubro en el que ejerzo profesión.
 
-A place to include any other types of information that you'd like to include about yourself.
+<hr>
 
-### Contact me
+#### Si tienes ideas o comentarios respecto a este sitio, no dudes en contactarme!
 
-[gonzalo.tajmuch@gmail.com](gonzalo.tajmuch@gmail.com)
+[gonzalo.tajmuch@gmail.com](mailto:gonzalo.tajmuch@gmail.com)

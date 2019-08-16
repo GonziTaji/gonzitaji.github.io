@@ -28,6 +28,7 @@ body {
 .container {
   margin: 0 auto;
   padding: 0 10px;
+  width: 100%;
   max-width: 800px;
   word-wrap: break-word;
 }
@@ -141,7 +142,7 @@ img {
 //
 
 .wrapper-masthead {
-  height: $headerHeight;
+  min-height: $headerHeight;
   margin-bottom: 50px;
   border-bottom: 1px #2f2f2f solid;
   background-color: #437c90; //rgb(87,180,175);
@@ -192,6 +193,7 @@ nav {
 
     @include mobile {
       margin: 0 10px;
+      display: block;
     }
 
     &:hover { color: white }
@@ -212,12 +214,15 @@ nav {
   display: grid;
   grid-template-columns: minmax(260px, max-content) minmax(min-content, 800px);
   grid-gap: 30px;
-  min-height: calc(100vh - calc($headerHeight - calc($footerHeight - 100px))); // <- wrappers de header y footer aplican 50 de margen cada uno
 
   @include small {
     display: block;
 
     #side-menu { display: none }
+  }
+
+  #main > .container:first-child {
+    width: 2300px;
   }
 }
 
@@ -282,7 +287,7 @@ ul.posts-list {
 }
 
 footer {
-  height: $footerHeight;
+  min-height: $footerHeight;
   padding: 20px 0;
   text-align: center;
 }

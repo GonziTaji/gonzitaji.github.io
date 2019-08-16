@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+
+<h1>Mi portafolio</h1>
+
 {% for project in site.projects %}
     <div class="project-overview">
         <h2>{{ project.titulo }}</h2>
@@ -26,6 +29,6 @@ layout: default
     </div>
 {% endfor %}
 
-<script>
-    
-</script>
+{% if site.projects.size == 0 %}
+    <p>En construcción!</p>
+{% endif %}

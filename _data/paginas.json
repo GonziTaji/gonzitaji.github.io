@@ -1,5 +1,8 @@
 [
        { 
+              "nombre": "Inicio",
+              "url":"/"
+       }, { 
               "nombre": "Archivo",
               "url":"/archivo/"
        }, { 
@@ -7,6 +10,6 @@
               "url":"/about/"
        }, { 
               "nombre": "Portafolio",
-              "url":"/portafolio/"
+              "url":"/portfolio/"
        }
 ]

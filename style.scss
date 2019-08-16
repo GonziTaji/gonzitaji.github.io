@@ -16,9 +16,11 @@
 html { font-size: $fontSize }
 
 body {
-	background: $dimWhite;
+  color: #d9d9d9;
   font: 1rem $helvetica;
-  color: $darkGray;
+  background: #2f2f2f;
+  overflow-y: scroll;
+  height: 100vh; // <- importante para posicionar footer
 
   @include small { font-size: 0.8rem }
 }
@@ -32,7 +34,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
-  color: $darkerGray;
+  color: #d9d9d9;
   font-weight: bold;
 
   line-height: 1.7;
@@ -61,7 +63,7 @@ h3 {
 
 h4 {
   font-size: 1.2rem;
-  color: $gray;
+  color: #e1e1e1;
 }
 
 p {
@@ -139,11 +141,14 @@ img {
 //
 
 .wrapper-masthead {
+  height: $headerHeight;
   margin-bottom: 50px;
-  border-bottom: 1px black solid;
-  background-color: rgb(87,180,175);
+  border-bottom: 1px #2f2f2f solid;
+  background-color: #437c90; //rgb(87,180,175);
   position: sticky;
   top: 0; // necesario para `position: sticky`
+  
+  * { color: #d9d9d9; }
 
   @include mobile {
     position: initial;
@@ -153,22 +158,21 @@ img {
 .masthead {
   display: flex;
   justify-content: space-between;
+  margin: 0 20px;
 }
 
 .site-info { flex-wrap: nowrap }
 
 .site-name {
-  // display: inline-block;
+  display: inline-block;
   flex-wrap: nowrap;
   margin: 0;
-  color: $white;
   font-weight: normal;
   letter-spacing: 1px;
 }
 
 .site-description {
   display: inline-block;
-  color: $dimWhite;
 }
 
 nav {
@@ -178,10 +182,10 @@ nav {
   @include mobile { display: block }
 
   a {
-    height: 40px;
+    
+    padding: 10px 0;
     margin-left: 20px;
-    color: $white;
-    // text-align: right;
+    color: rgb(71, 66, 66);
     font-weight: 300;
     letter-spacing: 1px;
     display: inline-block;
@@ -190,8 +194,11 @@ nav {
       margin: 0 10px;
     }
 
+    &:hover { color: white }
+
     &.active {
       text-decoration-line: underline;
+      color: white;
     }
   }
 }
@@ -205,6 +212,7 @@ nav {
   display: grid;
   grid-template-columns: minmax(260px, max-content) minmax(min-content, 800px);
   grid-gap: 30px;
+  min-height: calc(100vh - calc($headerHeight - calc($footerHeight - 100px))); // <- wrappers de header y footer aplican 50 de margen cada uno
 
   @include small {
     display: block;
@@ -223,19 +231,14 @@ ul.posts-list {
 
     a { color: $gray }
     a:hover { 
-      color: $black;
+      color: white;
       text-decoration-line: underline;
 
-      small { color: $gray }
-    }
-
-    &::marker {
-      color: red;
-      margin: 0px 0px 0px 0px;
+      small { color: $lightGray }
     }
 
     small {
-      color: $lightGray;
+      color: $gray;
       font-size: 0.8em;
     }
   }
@@ -279,6 +282,7 @@ ul.posts-list {
 }
 
 footer {
+  height: $footerHeight;
   padding: 20px 0;
   text-align: center;
 }
@@ -287,3 +291,4 @@ footer {
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
 @import "svg-icons";
+@import "portfolio";

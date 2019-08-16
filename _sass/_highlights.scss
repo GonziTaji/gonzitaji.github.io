@@ -2,7 +2,8 @@ div.highlight {
   margin: 2rem 0;
   overflow: auto;
   font-size: 0.8rem;
-  border: 1px solid $blue;
+  border: 1px solid #437c90;
+  box-shadow: 0px 0px 6px 1px #437c90;
   overflow: auto;
   padding: 7px 7px 7px 10px;
 }
@@ -13,7 +14,7 @@ code { font-family: 'Consolas', 'Courier New', monospace; }
 // https://github.com/richleland/pygments-css/blob/master/monokai.css
 // DEMO: http://pygments.org/demo/6860481/?style=monokai
 .highlight .hll { background-color: #49483e }
-.highlight  { background: #272822; color: #f8f8f2 }
+.highlight  { background: #2f2f2f; color: #f8f8f2 }
 .highlight .c { color: #75715e } /* Comment */
 .highlight .err { color: #960050; background-color: #1e0010 } /* Error */
 .highlight .k { color: #66d9ef } /* Keyword */

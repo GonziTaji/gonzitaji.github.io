@@ -22,6 +22,10 @@ $georgia: Georgia, serif;
 
 $fontSize: 17px;
 
+// Layout
+$headerHeight: 55px;
+$footerHeight: 85px;
+
 // Mobile breakpoints
 @mixin mobile {
   @media screen and (max-width: 640px) {
